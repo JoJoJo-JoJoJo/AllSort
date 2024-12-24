@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AllSort: %s",
-  description: "",
+  title: "AllSort | %s",
+  description:
+    "Planning for productivity can be a time-consuming task. AllSort is an application designed to assist with organisation and effective planning, allowing you to begin your productivity journey sooner.",
 };
 
 export default function RootLayout({
