@@ -2,20 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  /** BLUES */
+  /* light */
+  .textl-blue-primary {
+    color: theme(colors[blue-10]);
   }
-}
+  .textl-blue-secondary {
+    color: theme(colors[blue-9]);
+  }
+  .textl-blue-subtle {
+    color: theme(colors[blue-8]);
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* dark */
+  .textd-blue-primary {
+    color: theme(colors[blue-1]);
+  }
+  .textd-blue-secondary {
+    color: theme(colors[blue-2]);
+  }
+  .textd-blue-subtle {
+    color: theme(colors[blue-3]);
+  }
+
+  /** ORANGES */
+  /* light */
+  .textl-orange-primary {
+    color: theme(colors[orange-10]);
+  }
+  .textl-orange-secondary {
+    color: theme(colors[orange-9]);
+  }
+  .textl-orange-subtle {
+    color: theme(colors[orange-8]);
+  }
+
+  /* dark */
+  .textd-orange-primary {
+    color: theme(colors[orange-1]);
+  }
+  .textd-orange-secondary {
+    color: theme(colors[orange-2]);
+  }
+  .textd-orange-subtle {
+    color: theme(colors[orange-3]);
+  }
+
+  /** GRAYTONES */
 }

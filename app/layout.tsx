@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto_Condensed, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoSlab = Roboto_Slab({
+  variable: "--font-roboto-slab",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "AllSort | %s",
+  title: {
+    template: "%s | AllSort",
+    default: "AllSort",
+  },
   description:
     "Planning for productivity can be a time-consuming task. AllSort is an application designed to assist with organisation and effective planning, allowing you to begin your productivity journey sooner.",
 };
@@ -26,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoCondensed.variable} ${robotoSlab.variable} antialiased min-w-full`}
       >
         {children}
       </body>
