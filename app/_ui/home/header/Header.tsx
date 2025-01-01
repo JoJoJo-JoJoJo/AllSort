@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import HeaderDesign from "./HeaderDesign";
 
 const Header = () => {
-  const [isSmall, setIsSmall] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSmall((prev) => {
+      setIsScrolled((prev) => {
         if (
           !prev &&
           (document.body.scrollTop > 20 ||
@@ -31,7 +31,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  return <HeaderDesign isSmall={isSmall} />;
+  return <HeaderDesign isScrolled={isScrolled} />;
 };
 
 export default Header;
