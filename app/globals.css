@@ -61,7 +61,7 @@
     border-bottom: 3px solid theme(colors[orange-4]);
   }
 
-  .btn {
-    @apply border-b-2 border-t-2 rounded-md
+  .btn-base {
+    @apply rounded-md border-blue-2 border-2
   }
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 const NavBtn = ({ children, sectionLink, twClassNames }: NavBtnProps) => {
   return (
     <li
-      className={`flex justify-center items-center h-3/5 px-4 ${
+      className={`flex justify-center items-center py-2 px-4 text-xl ${
         twClassNames ?? ""
       }`}
     >

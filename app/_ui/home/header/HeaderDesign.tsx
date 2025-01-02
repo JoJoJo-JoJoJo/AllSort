@@ -9,7 +9,7 @@ import SignedInMenu from "./user-menus/SignedInMenu";
 
 const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
   //* TEMPORARY - REMOVE WHEN STATE MANAGEMENT ADDED.
-  const userSignedIn = false;
+  const userSignedIn = true;
 
   return (
     <header
@@ -23,28 +23,28 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
             {/* <Logo size={logoSizes.medium} /> */}
             AllSort
           </NavBtn>
-          <NavBtn sectionLink="#home-about" twClassNames="nav hover:nav-hover">
+          <NavBtn sectionLink="#home-about" twClassNames="nav">
             About
           </NavBtn>
           <NavBtn
             sectionLink="#home-benefits"
-            twClassNames="nav hover:nav-hover"
+            twClassNames="nav"
           >
             Benefits
           </NavBtn>
           <NavBtn
             sectionLink="#home-reviews"
-            twClassNames="nav hover:nav-hover"
+            twClassNames="nav"
           >
             Reviews
           </NavBtn>
-          <NavBtn sectionLink="#home-plans" twClassNames="nav hover:nav-hover">
+          <NavBtn sectionLink="#home-plans" twClassNames="nav">
             Plans
           </NavBtn>
           {!userSignedIn ? (
             <DefaultUserMenu />
           ) : (
-            <SignedInMenu userStatus={"basic"} />
+            <SignedInMenu userStatus={"Basic"} />
           )}
         </ul>
       </nav>

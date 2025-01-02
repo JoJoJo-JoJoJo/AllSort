@@ -21,7 +21,7 @@ type LogoProps = {
   size: Size;
 };
 
-type Status = "basic" | "member" | "premium" | "team manager" | "admin";
+type Status = "Basic" | "Member" | "Premium" | "Team Manager" | "Admin";
 
 type UserMenuProps = {
   userStatus: Status;
