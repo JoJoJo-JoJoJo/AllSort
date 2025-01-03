@@ -19,27 +19,24 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
     >
       <nav className="h-full">
         <ul className="flex flex-row items-center justify-evenly h-full">
-          <NavBtn sectionLink="/home">
+          <NavBtn sectionLink="/">
             {/* <Logo size={logoSizes.medium} /> */}
             AllSort
           </NavBtn>
-          <NavBtn sectionLink="#home-about" twClassNames="nav">
+          <NavBtn sectionLink="/about" twClassNames="nav">
             About
           </NavBtn>
-          <NavBtn
-            sectionLink="#home-benefits"
-            twClassNames="nav"
-          >
-            Benefits
+          <NavBtn sectionLink="/tools" twClassNames="nav">
+            Tools
           </NavBtn>
-          <NavBtn
-            sectionLink="#home-reviews"
-            twClassNames="nav"
-          >
-            Reviews
-          </NavBtn>
-          <NavBtn sectionLink="#home-plans" twClassNames="nav">
+          <NavBtn sectionLink="/plans" twClassNames="nav">
             Plans
+          </NavBtn>
+          <NavBtn sectionLink="/faqs" twClassNames="nav">
+            FAQs
+          </NavBtn>
+          <NavBtn sectionLink="/contact-us" twClassNames="nav">
+            Contact us
           </NavBtn>
           {!userSignedIn ? (
             <DefaultUserMenu />
