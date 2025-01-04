@@ -54,14 +54,11 @@
 
 @layer utilities {
   .nav {
-    @apply border-blue-2 border-b-2 rounded-md hover:border-blue-3 transition ease-linear delay-100;
+    @apply border-blue-2 border-b-2 rounded-md transition ease-linear delay-100 cursor-pointer;
   }
 
-  .nav:hover, .nav:focus {
-    border-bottom: 3px solid theme(colors[orange-4]);
-  }
-
-  .btn-base {
-    @apply rounded-md border-blue-2 border-2
+  .nav:hover,
+  .nav:focus {
+    @apply border-b-2 border-orange-3;
   }
 }

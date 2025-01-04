@@ -9,7 +9,7 @@ import SignedInMenu from "./user-menus/SignedInMenu";
 
 const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
   //* TEMPORARY - REMOVE WHEN STATE MANAGEMENT ADDED.
-  const userSignedIn = true;
+  const userSignedIn = false;
 
   return (
     <header
