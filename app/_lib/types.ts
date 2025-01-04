@@ -1,4 +1,6 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ReactNode } from "react";
+import { FilePath } from "tailwindcss/types/config";
 
 type Size = {
   width: number;
@@ -25,6 +27,13 @@ type Status = "Basic" | "Member" | "Premium" | "Team Manager" | "Admin";
 
 type UserMenuProps = {
   userStatus: Status;
+  userIconPath: FilePath | StaticImport;
+};
+
+type SizeConst = {
+  small: Size;
+  medium: Size;
+  large?: Size;
 };
 
 export type {
@@ -35,4 +44,5 @@ export type {
   LogoProps,
   Status,
   UserMenuProps,
+  SizeConst,
 };

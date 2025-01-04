@@ -1,26 +1,35 @@
+"use client";
+
+import { userIconSizes } from "@/app/_lib/constants";
 import { UserMenuProps } from "@/app/_lib/types";
 import Image from "next/image";
+import NavBtn from "../NavBtn";
 
-const SignedInMenu = ({ userStatus }: UserMenuProps) => {
-  // User menu should dropdown on hover.
-
-  // Profile image should be fetched from user data - if none, load default icon.
+const SignedInMenu = ({ userStatus, userIconPath }: UserMenuProps) => {
+  const { width, height } = userIconSizes.small;
 
   return (
-    <li className="h-3/5 md:w-1/8 px-4 textl-blue-subtle flex flex-row items-center">
-      <div className="relative">
+    <li className="px-4 textl-blue-subtle float-left overflow-hidden">
+      <button className="flex flex-row items-center cursor-pointer">
         <Image
           priority
-          src={"/images/defaultUserIcon.svg"}
-          fill={true}
+          src={userIconPath}
+          width={width}
+          height={height}
           alt="User profile picture"
-          className="rounded-full"
+          className="rounded-full mr-2 overflow-hidden"
         />
-      </div>
-      <div className="">
-        <p className="text-xl">Username</p>
-        <p className="text-sm">{`${userStatus} status`}</p>
-      </div>
+        <div className="flex flex-col items-start justify-center">
+          <p className="text-xl">Username</p>
+          <p className="text-sm">{userStatus}</p>
+        </div>
+      </button>
+      <ul className="hidden">
+        <NavBtn sectionLink="/">Profile</NavBtn>
+        <NavBtn sectionLink="/">Dashboard</NavBtn>
+        <NavBtn sectionLink="/">Settings</NavBtn>
+        <NavBtn sectionLink="/">Sign out</NavBtn>
+      </ul>
     </li>
   );
 };

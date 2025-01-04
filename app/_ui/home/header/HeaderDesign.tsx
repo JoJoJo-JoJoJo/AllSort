@@ -4,12 +4,25 @@ import { HeaderDesignProps } from "@/app/_lib/types";
 import NavBtn from "./NavBtn";
 import DefaultUserMenu from "./user-menus/DefaultUserMenu";
 import SignedInMenu from "./user-menus/SignedInMenu";
+import { useEffect, useState } from "react";
+import { fetchUserIcon } from "@/app/_lib/actions";
+import { FilePath } from "tailwindcss/types/config";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { defaultUserIconPath } from "@/app/_lib/constants";
 // import Logo from "../../Logo";
 // import { logoSizes } from "@/app/_lib/constants";
 
 const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
-  //* TEMPORARY - REMOVE WHEN STATE MANAGEMENT ADDED.
-  const userSignedIn = false;
+  //* TEMPORARY - REMOVE WHEN STATE MANAGEMENT ADDED. --------------------------------------
+  const userSignedIn = true;
+  const [userIconPath, setUserIconPath] = useState<FilePath | StaticImport>(
+    defaultUserIconPath
+  );
+
+  useEffect(() => {
+    setUserIconPath(fetchUserIcon(1));
+  }, []);
+  //* --------------------------------------------------------------------------------------
 
   return (
     <header
@@ -17,8 +30,8 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
         isScrolled ? "text-xl h-12" : "text-3xl h-24"
       } sticky top-0 bg-gradient-to-br from-orange-3 to-blue-3 dark:from-blue-7 dark:to-orange-6`}
     >
-      <nav className="h-full">
-        <ul className="flex flex-row items-center justify-evenly h-full">
+      <nav className="h-full px-8 overflow-hidden">
+        <ul className="flex flex-row items-center justify-between h-full">
           <NavBtn sectionLink="/">
             {/* <Logo size={logoSizes.medium} /> */}
             AllSort
@@ -41,7 +54,7 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
           {!userSignedIn ? (
             <DefaultUserMenu />
           ) : (
-            <SignedInMenu userStatus={"Basic"} />
+            <SignedInMenu userStatus={"Basic"} userIconPath={userIconPath} />
           )}
         </ul>
       </nav>

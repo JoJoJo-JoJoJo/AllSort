@@ -1,4 +1,6 @@
-const logoSizes = {
+import { SizeConst } from "./types";
+
+const logoSizes: SizeConst = {
   small: {
     width: 40,
     height: 40,
@@ -13,4 +15,21 @@ const logoSizes = {
   },
 };
 
-export { logoSizes };
+const defaultUserIconPath = "/images/defaultUserIcon.svg";
+
+const userIconSizes: SizeConst = {
+  small: {
+    width: 40,
+    height: 40,
+  },
+  medium: {
+    width: 60,
+    height: 60,
+  },
+  large: {
+    width: 320,
+    height: 320,
+  },
+};
+
+export { logoSizes, defaultUserIconPath, userIconSizes };
