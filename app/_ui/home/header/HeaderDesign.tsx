@@ -30,8 +30,8 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
         isScrolled ? "text-xl h-12" : "text-3xl h-24"
       } sticky top-0 bg-gradient-to-br from-orange-3 to-blue-3 dark:from-blue-7 dark:to-orange-6`}
     >
-      <nav className="h-full px-8 overflow-hidden">
-        <ul className="flex flex-row items-center justify-between h-full">
+      <nav className="h-full px-8 flex justify-between items-center">
+        <ul className="flex flex-row items-center justify-between h-full overflow-hidden w-4/5">
           <NavBtn sectionLink="/">
             {/* <Logo size={logoSizes.medium} /> */}
             AllSort
@@ -51,12 +51,12 @@ const HeaderDesign = ({ isScrolled }: HeaderDesignProps) => {
           <NavBtn sectionLink="/contact-us" twClassNames="nav">
             Contact us
           </NavBtn>
-          {!userSignedIn ? (
-            <DefaultUserMenu />
-          ) : (
-            <SignedInMenu userStatus={"Basic"} userIconPath={userIconPath} />
-          )}
         </ul>
+        {!userSignedIn ? (
+          <DefaultUserMenu />
+        ) : (
+          <SignedInMenu userStatus={"Premium"} userIconPath={userIconPath} />
+        )}
       </nav>
     </header>
   );

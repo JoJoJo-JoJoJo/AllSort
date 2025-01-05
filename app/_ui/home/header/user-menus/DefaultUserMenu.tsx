@@ -2,10 +2,10 @@
 
 const DefaultUserMenu = () => {
   return (
-    <li className="px-4 textl-blue-subtle flex flex-row justify-between items-center">
+    <div className="px-4 textl-blue-subtle flex flex-row justify-between items-center">
       <button
         onClick={() => alert("This would take you to the sign-in page.")}
-        className="border-2 border-blue-2 rounded-md text-xl px-4 py-2 mx-2"
+        className="border-2 border-blue-2 rounded-md h-3/5 text-xl px-4 py-2 mx-2"
       >
         Sign In
       </button>
@@ -13,9 +13,9 @@ const DefaultUserMenu = () => {
         onClick={() => alert("This would take you to the registration page.")}
         className="border-2 border-orange-2 rounded-md text-xl px-4 py-2 mx-2"
       >
-        Start Now For Free
+        Register
       </button>
-    </li>
+    </div>
   );
 };
 

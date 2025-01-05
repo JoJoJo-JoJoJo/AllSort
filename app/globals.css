@@ -49,7 +49,31 @@
     color: theme(colors[orange-3]);
   }
 
-  /** GRAYTONES */
+  /** STATUS COLOURS */
+  /* basic */
+  .status-basic {
+    @apply text-graytone-7 dark:text-graytone-4 border-graytone-4 dark:border-graytone-7;
+  }
+
+  /* member */
+  .status-member {
+    @apply text-green-6 dark:text-green-3 border-green-3 dark:border-green-6;
+  }
+
+  /* premium */
+  .status-premium {
+    @apply text-yellow-7 dark:text-yellow-4 border-yellow-4 dark:border-yellow-7;
+  }
+
+  /* team manager */
+  .status-team-manager {
+    @apply text-purple-7 dark:text-purple-4 border-purple-4 dark:border-purple-7;
+  }
+
+  /* admin */
+  .status-admin {
+    @apply text-red-7 dark:text-red-4 border-red-4 dark:border-red-7;
+  }
 }
 
 @layer utilities {
@@ -60,5 +84,18 @@
   .nav:hover,
   .nav:focus {
     @apply border-b-2 border-orange-3;
+  }
+
+  /** Z-INDEXES */
+  .zi-1 {
+    z-index: 1;
+  }
+
+  .zi-2 {
+    z-index: 2;
+  }
+
+  .zi-3 {
+    z-index: 3;
   }
 }

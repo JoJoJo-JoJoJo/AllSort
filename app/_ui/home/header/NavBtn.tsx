@@ -1,3 +1,5 @@
+"use client";
+
 import { NavBtnProps } from "@/app/_lib/types";
 import Link from "next/link";
 
@@ -8,7 +10,11 @@ const NavBtn = ({ children, sectionLink, twClassNames }: NavBtnProps) => {
         twClassNames ?? ""
       }`}
     >
-      <Link href={sectionLink} scroll={false} className="textl-blue-subtle hover:textl-orange-subtle">
+      <Link
+        href={sectionLink}
+        scroll={false}
+        className="textl-blue-subtle hover:textl-orange-subtle"
+      >
         {children}
       </Link>
     </li>
